@@ -1,0 +1,49 @@
+<html ng-app="app">
+    <head>
+        <link rel="shortcut icon" href="https://developer.oxforddictionaries.com/odfavicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Oxford Dictionary</title>
+
+        <link rel="stylesheet" href="lib/custombootstrap.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="lib/octicons/octicons/octicons.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="lib/site.css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body  ng-controller="oxfordDataController">
+
+        <div class="container">
+            <div class="panel  panel-default">
+                <div class="panel-heading">
+
+                    <form class="form-inline">
+                        <span>
+                            <h4>Search: <span class="badge">{{results.length}}</span>
+                            <input ng-model="searchText" placeholder="Find a word..." class="form-control input-sm">
+                            </h4>
+                        </span>
+                    </form>
+
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <div ng-repeat="data in results" class="list-group-item ">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4>
+                                            {{data.id}}
+                                    </h4>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="lib/angular/angular.min.js" charset="utf-8"></script>
+        <script src="app/app.js" charset="utf-8"></script>
+
+    </body>
+    </body>
+</html>
